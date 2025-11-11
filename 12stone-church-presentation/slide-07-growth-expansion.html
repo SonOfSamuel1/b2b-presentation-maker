@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth & Expansion - 12Stone Church</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #D8DDE2;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 80px;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(167, 212, 240, 0.3) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #3D3D3D;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A7D4F0;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      color: #3D3D3D;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .title {
+      font-size: 52px;
+      font-weight: 700;
+      color: #3D3D3D;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 64px;
+    }
+
+    .growth-container {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .left-section {
+      flex: 1;
+    }
+
+    .growth-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .metric-card {
+      background: #FFFFFF;
+      border: 2px solid #D8DDE2;
+      border-radius: 24px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .metric-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      background: #A7D4F0;
+      border-radius: 50%;
+      color: #3D3D3D;
+      flex-shrink: 0;
+    }
+
+    .metric-icon svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .metric-content h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3D3D3D;
+      margin-bottom: 8px;
+    }
+
+    .metric-content p {
+      font-size: 14px;
+      color: #6B6B6B;
+      line-height: 1.5;
+    }
+
+    .right-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .expansion-card {
+      background: #E8EAED;
+      border: 2px solid #D8DDE2;
+      border-radius: 28px;
+      padding: 40px;
+    }
+
+    .expansion-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .expansion-badge {
+      width: 12px;
+      height: 12px;
+      background: #A7D4F0;
+      border-radius: 50%;
+    }
+
+    .expansion-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #A7D4F0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .expansion-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #3D3D3D;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .expansion-description {
+      font-size: 15px;
+      color: #6B6B6B;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .expansion-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .expansion-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #3D3D3D;
+    }
+
+    .expansion-list li::before {
+      content: "✓";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: #A7D4F0;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      color: #3D3D3D;
+      flex-shrink: 0;
+    }
+
+    .highlight-card {
+      background: #A7D4F0;
+      border-color: #A7D4F0;
+    }
+
+    .highlight-card .expansion-title,
+    .highlight-card .expansion-description,
+    .highlight-card .expansion-list li {
+      color: #3D3D3D;
+    }
+
+    .expansion-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .expansion-image {
+      width: 100%;
+      height: 260px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid #D8DDE2;
+    }
+
+    .expansion-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #E8EAED 0%, #D8DDE2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #6B6B6B;
+    }
+
+    .placeholder-icon {
+      font-size: 64px;
+      margin-bottom: 12px;
+      opacity: 0.3;
+    }
+
+    .placeholder-text {
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.5;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .slide-number {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-size: 14px;
+      color: #6B6B6B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay"></div>
+
+    <div class="logo-container">
+      <div class="logo-icon">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <div class="content-container">
+      <h1 class="title">Growth & Expansion</h1>
+
+      <div class="growth-container">
+        <div class="left-section">
+          <div class="growth-metrics">
+            <div class="metric-card">
+              <div class="metric-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 52H56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M12 48V40M20 48V36M28 48V28M36 48V24M44 48V16M52 48V12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M12 40L20 36L28 28L36 24L44 16L52 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="52" cy="12" r="3" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="metric-content">
+                <h3>9 → 12</h3>
+                <p>Campus expansion across Gwinnett and Hall Counties in Georgia</p>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 56V28L32 16L44 28V56H20Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M28 56V40H36V56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M32 4V12M28 8H36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  <rect x="24" y="32" width="6" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+                  <rect x="34" y="32" width="6" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="metric-content">
+                <h3>+5 Churches</h3>
+                <p>New church plants through Church Planting Network initiative</p>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="20" r="8" stroke="currentColor" stroke-width="2.5"/>
+                  <path d="M16 52C16 40 22 32 32 32C42 32 48 40 48 52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="16" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="48" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 52C8 44 10 38 16 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M56 52C56 44 54 38 48 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="metric-content">
+                <h3>12Stone Home</h3>
+                <p>Home church network bringing community to neighborhoods</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="expansion-card highlight-card">
+            <div class="expansion-header">
+              <div class="expansion-badge"></div>
+              <span class="expansion-label">Vision 2025+</span>
+            </div>
+            <h2 class="expansion-title">Strategic Expansion Plan</h2>
+            <p class="expansion-description">
+              Bringing biblically-rooted, gospel-focused hope to cities that need the rescuing hand of God
+            </p>
+            <ul class="expansion-list">
+              <li>Launch 3 new physical campuses in underserved communities</li>
+              <li>Plant 5 new churches through strategic partnerships</li>
+              <li>Expand 12Stone Home network to 50+ locations</li>
+              <li>Reach 15,000+ weekly attendance across all locations</li>
+            </ul>
+          </div>
+
+          <div class="expansion-card">
+            <div class="expansion-header">
+              <div class="expansion-badge"></div>
+              <span class="expansion-label">Current Campuses</span>
+            </div>
+            <h2 class="expansion-title">9 Campus Locations</h2>
+            <p class="expansion-description">
+              Serving communities across Gwinnett County and Hall County, Georgia, with plans for continued growth and impact
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="expansion-images">
+        <div class="expansion-image">
+          <!-- <img src="images/campus-locations.jpg" alt="Campus Map"> -->
+          <div class="image-placeholder">
+            <div class="placeholder-icon">📍</div>
+            <div class="placeholder-text">Campus Locations Map</div>
+          </div>
+        </div>
+        <div class="expansion-image">
+          <!-- <img src="images/new-campus-construction.jpg" alt="New Campus"> -->
+          <div class="image-placeholder">
+            <div class="placeholder-icon">🏗️</div>
+            <div class="placeholder-text">New Campus Development</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">7/8</div>
+  </div>
+</body>
+</html>

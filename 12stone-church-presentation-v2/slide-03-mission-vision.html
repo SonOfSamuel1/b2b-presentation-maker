@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission & Vision - 12Stone Church</title>
+  <style>
+    :root {
+      --color-black: #000000;
+      --color-white: #FFFFFF;
+      --color-light-gray: #F5F5F5;
+      --color-medium-gray: #7F7F7F;
+      --color-border-subtle: rgba(0, 0, 0, 0.08);
+
+      --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Monaco, Inconsolata, "Fira Mono", monospace;
+
+      --font-size-h1: clamp(2rem, 1.5435rem + 2.087vw, 3.5rem);
+      --font-size-h3: clamp(1.5rem, 1.0435rem + 2.087vw, 3rem);
+      --font-size-body: clamp(1rem, 0.9239rem + 0.3478vw, 1.25rem);
+      --font-size-label: 0.75rem;
+
+      --spacing-base: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+
+      --radius-lg: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-light-gray);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: var(--color-light-gray);
+      padding: 80px;
+    }
+
+    /* Logo */
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--color-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 16px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+
+    .logo-text {
+      color: var(--color-black);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Content */
+    .content-container {
+      margin-top: 100px;
+    }
+
+    .title {
+      font-size: var(--font-size-h1);
+      font-weight: 500;
+      color: var(--color-black);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-3xl);
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xl);
+      max-width: 1600px;
+    }
+
+    .card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-3xl);
+    }
+
+    .card-label {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-label);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-medium-gray);
+      margin-bottom: var(--spacing-lg);
+      display: block;
+    }
+
+    .card-title {
+      font-size: var(--font-size-h3);
+      font-weight: 500;
+      color: var(--color-black);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .card-description {
+      font-size: var(--font-size-body);
+      color: var(--color-medium-gray);
+      line-height: 1.5;
+      max-width: 1200px;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-xl);
+    }
+
+    .vision-item {
+      padding: var(--spacing-xl);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      text-align: center;
+      transition: border-color 75ms ease-out, box-shadow 75ms ease-out;
+    }
+
+    .vision-item:hover {
+      border-color: var(--color-black);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .vision-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--spacing-base);
+      background: var(--color-light-gray);
+      border: 2px solid var(--color-black);
+    }
+
+    .vision-number svg {
+      width: 40px;
+      height: 40px;
+      color: var(--color-black);
+    }
+
+    .vision-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-black);
+      margin-bottom: 12px;
+    }
+
+    .vision-description {
+      font-size: 14px;
+      color: var(--color-medium-gray);
+      line-height: 1.5;
+    }
+
+    /* Decorative Background */
+    .decorative-bg {
+      position: absolute;
+      bottom: -50px;
+      right: -50px;
+      width: 400px;
+      height: 400px;
+      opacity: 0.20;
+      z-index: 0;
+    }
+
+    .floating-shape {
+      position: absolute;
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    .shape-1 {
+      top: 100px;
+      right: 100px;
+      width: 120px;
+      height: 120px;
+    }
+
+    .shape-2 {
+      bottom: 150px;
+      right: 200px;
+      width: 80px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <!-- Decorative Background -->
+    <svg class="decorative-bg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="180" fill="url(#bgGrad)"/>
+      <defs>
+        <radialGradient id="bgGrad">
+          <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1"/>
+          <stop offset="50%" style="stop-color:#A855F7;stop-opacity:0.8"/>
+          <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0.3"/>
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <svg class="floating-shape shape-1" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="100" height="100" rx="12" stroke="#000000" stroke-width="2" fill="none"/>
+      <line x1="30" y1="40" x2="90" y2="40" stroke="#000000" stroke-width="2"/>
+      <line x1="30" y1="60" x2="70" y2="60" stroke="#000000" stroke-width="2"/>
+    </svg>
+
+    <svg class="floating-shape shape-2" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="30" stroke="#000000" stroke-width="2" fill="none"/>
+      <path d="M40 20 L40 40 L55 50" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <!-- Logo -->
+    <div class="logo-container">
+      <div class="logo-mark">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <!-- Content -->
+    <div class="content-container">
+      <h1 class="title">Mission & Vision</h1>
+
+      <div class="cards-container">
+        <!-- Mission Card -->
+        <div class="card">
+          <span class="card-label">Our Mission</span>
+          <h2 class="card-title">So Future Generations Will Know the Rescuing Hand of God</h2>
+          <p class="card-description">
+            Just as the children of Israel stacked twelve stones as a memorial to God's faithfulness in bringing them across the Jordan River into the Promised Land, 12Stone Church exists to be a living memorial of God's rescuing power—so that every generation after us will know His hand at work in their lives.
+          </p>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="card">
+          <span class="card-label">Our Vision</span>
+          <div class="vision-grid">
+            <div class="vision-item">
+              <div class="vision-number">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                </svg>
+              </div>
+              <h3 class="vision-title">Reach the Lost</h3>
+              <p class="vision-description">Bringing hope and the gospel to those who don't yet know Jesus</p>
+            </div>
+            <div class="vision-item">
+              <div class="vision-number">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+              </div>
+              <h3 class="vision-title">Serve the Least</h3>
+              <p class="vision-description">Making a tangible difference in our communities and around the world</p>
+            </div>
+            <div class="vision-item">
+              <div class="vision-number">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <h3 class="vision-title">Raise Up Leaders</h3>
+              <p class="vision-description">Developing the next generation of ministry and community leaders</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

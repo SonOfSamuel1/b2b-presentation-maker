@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, initial-scale=1.0">
+  <title>{{SLIDE_TITLE}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    {{CUSTOM_CSS}}
+
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: var(--font-body, 'Inter', system-ui, sans-serif);
+      color: var(--color-text, #3D3D3D);
+      background: var(--color-background, #D8DDE2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      padding: 80px 120px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Dark Theme Variant */
+    body.dark-theme {
+      background: var(--color-dark-bg, #4A4A4A);
+      color: var(--color-light-text, #FFFFFF);
+    }
+
+    body.dark-theme .slide.content h2,
+    body.dark-theme .slide.content p,
+    body.dark-theme .slide.content ul li {
+      color: var(--color-light-text, #FFFFFF);
+    }
+
+    body.dark-theme .content-card {
+      background: rgba(90, 90, 90, 0.6);
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Gradient Overlay */
+    .gradient-overlay {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(167, 212, 240, 0.3) 0%, transparent 70%);
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body.dark-theme .gradient-overlay {
+      background: radial-gradient(circle, rgba(130, 160, 180, 0.2) 0%, transparent 70%);
+    }
+
+    /* Pattern Background */
+    .pattern-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.15;
+    }
+
+    /* Numbered Badge */
+    .slide-badge {
+      position: absolute;
+      top: 80px;
+      left: 120px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--color-accent, #A7D4F0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #3D3D3D;
+      z-index: 10;
+    }
+
+    /* Content Card */
+    .content-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 48px 56px;
+      border: 2px solid #E8EAED;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Dark theme content card - enhanced shadow */
+    body.dark-theme .content-card {
+      background: #5F6368;
+      border-color: #6B7280;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Title Slide */
+    .slide.title {
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-bottom: 200px;
+      padding-left: 120px;
+    }
+
+    .slide.title h1 {
+      font-size: 130px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 32px;
+      color: var(--color-text, #3D3D3D);
+      max-width: 1400px;
+      letter-spacing: -2.5px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .slide.title .subtitle {
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--color-secondary, #5A5A5A);
+      max-width: 1000px;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Content Slide */
+    .slide.content {
+      padding-top: 140px;
+    }
+
+    .slide.content h2 {
+      font-size: 72px;
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: var(--color-text, #3D3D3D);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide.content h3 {
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: var(--color-secondary, #5A5A5A);
+      letter-spacing: -1px;
+    }
+
+    .slide.content p {
+      font-size: 38px;
+      line-height: 1.6;
+      margin-bottom: 0;
+      color: var(--color-text, #3D3D3D);
+      max-width: 100%;
+    }
+
+    .slide.content ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .slide.content ul li {
+      font-size: 38px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      padding-left: 68px;
+      position: relative;
+      color: var(--color-text, #3D3D3D);
+    }
+
+    .slide.content ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    .slide.content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 44px;
+      height: 44px;
+      background-image: url('data:image/svg+xml,<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="21" fill="%23A7D4F0" opacity="0.2"/><circle cx="22" cy="22" r="20" stroke="%23A7D4F0" stroke-width="1.5" fill="none"/><path d="M14 22L19.5 27.5L30 15" stroke="%233D3D3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    /* Dark theme checkmark variation */
+    body.dark-theme .slide.content ul li::before {
+      background-image: url('data:image/svg+xml,<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="21" fill="%23A7D4F0" opacity="0.15"/><circle cx="22" cy="22" r="20" stroke="%23A7D4F0" stroke-width="1.5" fill="none"/><path d="M14 22L19.5 27.5L30 15" stroke="%23FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    }
+
+    /* Background Image */
+    .slide-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .slide-background img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+    }
+
+    /* Hero Image */
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    }
+
+    .slide.hero h1,
+    .slide.hero .subtitle {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    /* SVG Graphics Container */
+    .graphics-container {
+      margin: 40px 0;
+    }
+
+    .graphic-item {
+      display: inline-block;
+      margin: 20px;
+    }
+
+    /* Footer */
+    .slide-footer {
+      position: absolute;
+      bottom: 50px;
+      left: 120px;
+      right: 120px;
+      font-size: 20px;
+      color: var(--color-text, #3D3D3D);
+      opacity: 0.3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    body.dark-theme .slide-footer {
+      color: var(--color-light-text, #FFFFFF);
+    }
+
+    .slide-number {
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide > * {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+<body {{THEME_CLASS}}>
+  {{GRADIENT_OVERLAY}}
+  <div class="slide {{SLIDE_TYPE}}">
+    {{BACKGROUND_PATTERN}}
+    {{SLIDE_BADGE}}
+    {{HERO_IMAGE}}
+    {{SLIDE_CONTENT}}
+    {{GRAPHICS}}
+    <div class="slide-footer">
+      <span class="slide-number">{{SLIDE_NUMBER}} / {{TOTAL_SLIDES}}</span>
+    </div>
+  </div>
+</body>
+</html>

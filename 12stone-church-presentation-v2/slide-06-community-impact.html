@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Impact - 12Stone Church</title>
+  <style>
+    :root {
+      --color-black: #000000;
+      --color-white: #FFFFFF;
+      --color-light-gray: #F5F5F5;
+      --color-medium-gray: #7F7F7F;
+      --color-border-subtle: rgba(0, 0, 0, 0.08);
+
+      --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Monaco, Inconsolata, "Fira Mono", monospace;
+
+      --font-size-h1: clamp(2rem, 1.5435rem + 2.087vw, 3.5rem);
+      --font-size-label: 0.75rem;
+
+      --spacing-base: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+
+      --radius-lg: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-light-gray);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: var(--color-light-gray);
+      padding: 80px;
+    }
+
+    /* Logo */
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--color-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 16px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+
+    .logo-text {
+      color: var(--color-black);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Content */
+    .content-container {
+      margin-top: 100px;
+    }
+
+    .title {
+      font-size: var(--font-size-h1);
+      font-weight: 500;
+      color: var(--color-black);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-3xl);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-3xl);
+    }
+
+    .impact-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-2xl);
+      transition: border-color 75ms ease-out, box-shadow 75ms ease-out;
+    }
+
+    .impact-card:hover {
+      border-color: var(--color-black);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .impact-label {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-label);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-medium-gray);
+      margin-bottom: var(--spacing-base);
+      display: block;
+    }
+
+    .impact-stat {
+      font-size: 56px;
+      font-weight: 500;
+      color: var(--color-black);
+      margin-bottom: var(--spacing-base);
+      line-height: 1;
+      font-family: var(--font-mono);
+    }
+
+    .impact-description {
+      font-size: 14px;
+      color: var(--color-medium-gray);
+      line-height: 1.6;
+    }
+
+    /* Partnerships Section */
+    .partnerships-section {
+      background: var(--color-black);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-2xl) var(--spacing-3xl);
+    }
+
+    .partnerships-title {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-label);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-white);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .partnerships-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-2xl);
+    }
+
+    .partnership-item h3 {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-white);
+      margin-bottom: 8px;
+    }
+
+    .partnership-item p {
+      font-size: 14px;
+      color: var(--color-light-gray);
+      line-height: 1.5;
+    }
+
+    /* Halftone Pattern Background */
+    .halftone-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.04;
+      z-index: 0;
+    }
+
+    .radial-accent {
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      opacity: 0.20;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <!-- Halftone Background Pattern -->
+    <svg class="halftone-bg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="halftone" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="1.5" fill="#000000"/>
+          <circle cx="15" cy="15" r="2" fill="#000000"/>
+          <circle cx="25" cy="5" r="1" fill="#000000"/>
+          <circle cx="5" cy="25" r="1" fill="#000000"/>
+          <circle cx="25" cy="25" r="1.5" fill="#000000"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#halftone)"/>
+    </svg>
+
+    <svg class="radial-accent" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="200" fill="url(#radialGrad)"/>
+      <defs>
+        <radialGradient id="radialGrad">
+          <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1"/>
+          <stop offset="50%" style="stop-color:#EC4899;stop-opacity:0.8"/>
+          <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.3"/>
+        </radialGradient>
+      </defs>
+    </svg>
+    <!-- Logo -->
+    <div class="logo-container">
+      <div class="logo-mark">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <!-- Content -->
+    <div class="content-container">
+      <h1 class="title">Community Impact</h1>
+
+      <!-- Impact Stats Grid -->
+      <div class="impact-grid">
+        <div class="impact-card">
+          <span class="impact-label">Food Security</span>
+          <div class="impact-stat">2M+</div>
+          <p class="impact-description">
+            Kids fed through local and global partnerships, fighting food insecurity in communities around the world
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <span class="impact-label">Global Missions</span>
+          <div class="impact-stat">Multiple</div>
+          <p class="impact-description">
+            Countries reached through Bible translation, church planting networks, and building infrastructure like Uganda's first high school
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <span class="impact-label">Anti-Trafficking</span>
+          <div class="impact-stat">Active</div>
+          <p class="impact-description">
+            Partnership with Sentinel Foundation to identify, rescue, and provide healing and support to children caught in sex trafficking
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <span class="impact-label">Church Planting</span>
+          <div class="impact-stat">12→15</div>
+          <p class="impact-description">
+            Expanding from 9 to 12 campuses with plans for 5 new churches bringing biblically-rooted, gospel-focused hope to new cities
+          </p>
+        </div>
+      </div>
+
+      <!-- Key Partnerships -->
+      <div class="partnerships-section">
+        <h2 class="partnerships-title">Key Ministry Partnerships</h2>
+        <div class="partnerships-grid">
+          <div class="partnership-item">
+            <h3>Moyo Missions</h3>
+            <p>Building Uganda's first high school at Village of Eden</p>
+          </div>
+          <div class="partnership-item">
+            <h3>Bible Translation</h3>
+            <p>Bringing the gospel to unreached people groups</p>
+          </div>
+          <div class="partnership-item">
+            <h3>Tim Tebow Foundation</h3>
+            <p>Hosting Night to Shine 2026 for special needs community</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

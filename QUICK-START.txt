@@ -1,0 +1,120 @@
+================================================================================
+CHURCH PRESENTATION IMAGE DOWNLOADER - QUICK START GUIDE
+================================================================================
+
+FASTEST WAY TO START:
+---------------------
+
+1. Open Terminal
+
+2. Copy and paste this command:
+
+   cd "/Users/terrancebrandon/Desktop/Code Projects (Official)/App- B2B- Presentation Maker" && ./install-and-run.sh
+
+3. Press Enter and follow the on-screen instructions
+
+
+WHAT HAPPENS:
+-------------
+
+The script will:
+✓ Install Playwright (if needed)
+✓ Open a browser automatically
+✓ Search Unsplash for each image
+✓ Pause to let you download your favorite
+✓ Continue to next image when you press ENTER
+✓ Generate a final report
+
+
+THE 8 IMAGES YOU'LL DOWNLOAD:
+-----------------------------
+
+1. church-exterior.jpg          - Modern church building
+2. worship-service.jpg           - Congregation worshiping
+3. ministry-discipleship.jpg     - Small group Bible study
+4. ministry-kids.jpg             - Kids church activities
+5. ministry-leadership.jpg       - Leadership training
+6. community-outreach.jpg        - Community service
+7. global-missions.jpg           - Mission trip work
+8. church-growth-2011.jpg        - Large congregation
+
+
+WHEN THE SCRIPT PAUSES:
+-----------------------
+
+You'll see instructions like:
+
+  IMAGE SELECTION REQUIRED
+  Image: Church Building Exterior
+  Search Query: "modern church building exterior"
+  Save As: church-exterior.jpg
+
+  INSTRUCTIONS:
+  1. Review the search results on the page
+  2. Click on your preferred image
+  3. Download the high-resolution version
+  4. Save it as: church-exterior.jpg
+  5. Move it to the images folder
+
+  Press ENTER when done...
+
+Just follow these steps and press ENTER to continue!
+
+
+WHERE IMAGES ARE SAVED:
+-----------------------
+
+All images go here:
+/Users/terrancebrandon/Desktop/Code Projects (Official)/App- B2B- Presentation Maker/12stone-church-presentation/images/
+
+
+HOW TO DOWNLOAD FROM UNSPLASH:
+------------------------------
+
+1. Click the image you like
+2. Click green "Download free" button (top right)
+3. Image downloads automatically
+4. Rename to the specified filename
+5. Move to images folder
+6. Press ENTER in terminal
+
+
+TIME NEEDED:
+------------
+
+First time setup: 5-10 minutes (installs dependencies)
+Downloading images: 15-20 minutes (2-3 min per image)
+Total: 20-30 minutes
+
+
+NEED HELP?
+----------
+
+See these files for detailed instructions:
+- README-IMAGE-DOWNLOAD.md (overview)
+- SETUP-INSTRUCTIONS.md (detailed guide)
+
+
+TROUBLESHOOTING:
+----------------
+
+If you get "command not found":
+  chmod +x install-and-run.sh
+  ./install-and-run.sh
+
+If Playwright isn't installed:
+  npm install playwright
+  npx playwright install chromium
+
+If browser doesn't open:
+  Make sure you have internet connection
+  Try running: node download-church-images.js
+
+
+READY? RUN THIS COMMAND:
+------------------------
+
+cd "/Users/terrancebrandon/Desktop/Code Projects (Official)/App- B2B- Presentation Maker" && ./install-and-run.sh
+
+
+================================================================================

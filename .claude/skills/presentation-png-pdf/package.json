@@ -1,0 +1,29 @@
+{
+  "name": "presentation-png-pdf",
+  "version": "1.0.0",
+  "description": "Generate high-quality 16:9 presentation slides as PNG and PDF with custom SVG graphics and AI-generated images",
+  "main": "scripts/create-presentation.js",
+  "scripts": {
+    "create": "node scripts/create-presentation.js",
+    "test": "node scripts/test-workflow.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.29.1",
+    "pdf-lib": "^1.17.1",
+    "axios": "^1.6.0",
+    "sharp": "^0.33.0",
+    "dotenv": "^16.0.0",
+    "openai": "^4.20.0"
+  },
+  "keywords": [
+    "presentation",
+    "slides",
+    "png",
+    "pdf",
+    "svg",
+    "ai-images",
+    "openrouter"
+  ],
+  "author": "Terrance Brandon",
+  "license": "MIT"
+}

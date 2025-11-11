@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12Stone Church Presentation</title>
+  <style>
+    :root {
+      /* LlamaIndex Design Tokens */
+      --color-black: #000000;
+      --color-white: #FFFFFF;
+      --color-light-gray: #F5F5F5;
+      --color-medium-gray: #7F7F7F;
+      --color-border-gray: #E7E7E7;
+
+      --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Monaco, Inconsolata, "Fira Mono", monospace;
+
+      --font-size-hero: clamp(3.5rem, 3.0435rem + 2.087vw, 5rem);
+      --font-size-h2: clamp(2rem, 1.5435rem + 2.087vw, 3.5rem);
+      --font-size-body-large: clamp(1.25rem, 1.1739rem + 0.3478vw, 1.5rem);
+      --font-size-body: clamp(1rem, 0.9239rem + 0.3478vw, 1.25rem);
+      --font-size-label: 0.75rem;
+
+      --spacing-base: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+
+      --transition-fast: 75ms;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-white);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px;
+    }
+
+    /* Logo Header */
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: var(--color-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 20px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+
+    .logo-text {
+      color: var(--color-black);
+      font-size: 18px;
+      font-weight: 500;
+      font-family: var(--font-primary);
+    }
+
+    /* Metadata */
+    .metadata {
+      position: absolute;
+      top: 40px;
+      right: 80px;
+      text-align: right;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--color-medium-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      max-width: 1200px;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-label);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-medium-gray);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .hero-title {
+      font-size: var(--font-size-hero);
+      font-weight: 500;
+      color: var(--color-black);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-body-large);
+      color: var(--color-medium-gray);
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto var(--spacing-3xl);
+    }
+
+    /* Tagline Footer */
+    .tagline {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: var(--font-size-body);
+      color: var(--color-medium-gray);
+      font-style: italic;
+      text-align: center;
+      max-width: 600px;
+      padding: 0 var(--spacing-xl);
+    }
+
+    /* Decorative Elements */
+    .hero-accent {
+      width: 120px;
+      height: 2px;
+      background: var(--color-black);
+      margin: 0 auto var(--spacing-2xl);
+    }
+
+    /* Background Graphics */
+    .background-graphic {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-circle-1 {
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      opacity: 0.25;
+    }
+
+    .bg-circle-2 {
+      bottom: -150px;
+      left: -150px;
+      width: 600px;
+      height: 600px;
+      opacity: 0.20;
+    }
+
+    .bg-pattern {
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.04;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <!-- Background Graphics -->
+    <svg class="background-graphic bg-circle-1" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="200" fill="url(#grad1)"/>
+      <defs>
+        <radialGradient id="grad1">
+          <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+          <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0.3" />
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <svg class="background-graphic bg-circle-2" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="300" cy="300" r="250" fill="url(#grad2)"/>
+      <defs>
+        <radialGradient id="grad2">
+          <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+          <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.3" />
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <svg class="background-graphic bg-pattern" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="20" cy="20" r="2" fill="#000000"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots)"/>
+    </svg>
+    <!-- Logo Header -->
+    <div class="logo-container">
+      <div class="logo-mark">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <!-- Metadata -->
+    <div class="metadata">
+      Presented by:<br>
+      12Stone Church Leadership
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-label">Church Presentation</div>
+      <h1 class="hero-title">12Stone.</h1>
+      <div class="hero-accent"></div>
+      <p class="hero-subtitle">
+        Rescuing Lives, Building Communities, Raising Leaders
+      </p>
+    </div>
+
+    <!-- Tagline Footer -->
+    <p class="tagline">"So future generations will know the rescuing hand of God"</p>
+  </div>
+</body>
+</html>

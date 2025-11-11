@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - 12Stone Church</title>
+  <style>
+    :root {
+      --color-black: #000000;
+      --color-white: #FFFFFF;
+      --color-light-gray: #F5F5F5;
+      --color-medium-gray: #7F7F7F;
+
+      --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Monaco, Inconsolata, "Fira Mono", monospace;
+
+      --font-size-hero: clamp(3.5rem, 3.0435rem + 2.087vw, 5rem);
+      --font-size-body-large: clamp(1.25rem, 1.1739rem + 0.3478vw, 1.5rem);
+      --font-size-body: clamp(1rem, 0.9239rem + 0.3478vw, 1.25rem);
+      --font-size-label: 0.75rem;
+
+      --spacing-base: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+
+      --radius-lg: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-black);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: var(--color-black);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px;
+    }
+
+    /* Logo Header */
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-black);
+      font-size: 20px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+
+    .logo-text {
+      color: var(--color-white);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    /* Metadata */
+    .metadata {
+      position: absolute;
+      top: 40px;
+      right: 80px;
+      text-align: right;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--color-medium-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+
+    /* Content */
+    .content-center {
+      max-width: 1200px;
+      z-index: 1;
+    }
+
+    .thank-you-title {
+      font-size: var(--font-size-hero);
+      font-weight: 500;
+      color: var(--color-white);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .subtitle {
+      font-size: var(--font-size-body-large);
+      color: var(--color-medium-gray);
+      line-height: 1.5;
+      margin-bottom: var(--spacing-3xl);
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl) var(--spacing-3xl);
+      display: inline-block;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-lg) var(--spacing-3xl);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--color-black);
+    }
+
+    .contact-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-medium-gray);
+    }
+
+    .contact-value {
+      font-weight: 500;
+    }
+
+    /* Tagline */
+    .tagline {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: var(--font-size-body);
+      color: var(--color-medium-gray);
+      font-style: italic;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    /* Decorative Closing Graphics */
+    .closing-graphic {
+      position: absolute;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .graphic-tl {
+      top: 150px;
+      left: 150px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .graphic-br {
+      bottom: 150px;
+      right: 150px;
+      width: 250px;
+      height: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <!-- Decorative Closing Graphics -->
+    <svg class="closing-graphic graphic-tl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="80" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="100" cy="100" r="50" stroke="#FFFFFF" stroke-width="2"/>
+      <path d="M100 30 L100 170 M30 100 L170 100" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+    </svg>
+
+    <svg class="closing-graphic graphic-br" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="50" y="50" width="150" height="150" rx="12" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="125" y="135" font-family="monospace" font-size="48" font-weight="800" text-anchor="middle" fill="#FFFFFF">12</text>
+    </svg>
+    <!-- Logo Header -->
+    <div class="logo-container">
+      <div class="logo-mark">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <!-- Metadata -->
+    <div class="metadata">
+      Presented by:<br>
+      12Stone Church Leadership
+    </div>
+
+    <!-- Content -->
+    <div class="content-center">
+      <h1 class="thank-you-title">Thank You.</h1>
+      <p class="subtitle">Join us in reaching future generations with the rescuing hand of God</p>
+
+      <div class="contact-info">
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div>
+              <div class="contact-label">Website</div>
+              <div class="contact-value">12stone.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Gwinnett & Hall County, GA</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-label">Campuses</div>
+              <div class="contact-value">9 Locations</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-label">Attendance</div>
+              <div class="contact-value">10,000+ Weekly</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tagline -->
+    <p class="tagline">"So future generations will know the rescuing hand of God"</p>
+  </div>
+</body>
+</html>

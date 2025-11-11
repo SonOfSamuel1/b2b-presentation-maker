@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Response Today</title>
+  <style>
+    :root {
+      --color-accent-blue: #A7D4F0;
+      --color-accent-blue-rgb: 167, 212, 240;
+      --color-dark-charcoal: #3D3D3D;
+      --color-medium-gray: #5A5A5A;
+      --color-bg-light-primary: #D8DDE2;
+      --color-bg-light-secondary: #E8EAED;
+      --color-bg-white: #FFFFFF;
+      --color-text-primary-light: #3D3D3D;
+      --color-text-secondary-light: #6B6B6B;
+      --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --spacing-2xl: 80px;
+      --radius-large: 28px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-bg-light-primary);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 80px;
+      background: linear-gradient(135deg, #D8DDE2 0%, #E8EAED 100%);
+      overflow: hidden;
+    }
+
+    /* Subtle dot pattern background */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(61, 61, 61, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(167, 212, 240, 0.35) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .title {
+      font-size: 78px;
+      font-weight: 700;
+      color: var(--color-dark-charcoal);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .content-card {
+      background: var(--color-bg-white);
+      border: 2px solid var(--color-bg-light-primary);
+      border-radius: var(--radius-large);
+      padding: 48px;
+      max-width: 1400px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .bullet-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--color-accent-blue);
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-dark-charcoal);
+      flex-shrink: 0;
+    }
+
+    .bullet-text {
+      font-size: 24px;
+      color: var(--color-dark-charcoal);
+      line-height: 1.5;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay"></div>
+
+    <div class="content-wrapper">
+      <h1 class="title">Our Response Today</h1>
+
+      <div class="content-card">
+        <ul class="bullet-list">
+          <li class="bullet-item">
+            <div class="bullet-number">01</div>
+            <span class="bullet-text">Live in readiness and expectation</span>
+          </li>
+          <li class="bullet-item">
+            <div class="bullet-number">02</div>
+            <span class="bullet-text">Share the Gospel urgently</span>
+          </li>
+          <li class="bullet-item">
+            <div class="bullet-number">03</div>
+            <span class="bullet-text">Grow in faith and holiness</span>
+          </li>
+          <li class="bullet-item">
+            <div class="bullet-number">04</div>
+            <span class="bullet-text">Encourage one another</span>
+          </li>
+          <li class="bullet-item">
+            <div class="bullet-number">05</div>
+            <span class="bullet-text">Look up with hope</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

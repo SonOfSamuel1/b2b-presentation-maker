@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Second Coming of Jesus</title>
+  <style>
+    :root {
+      --color-accent-blue: #A7D4F0;
+      --color-accent-blue-rgb: 167, 212, 240;
+      --color-dark-charcoal: #3D3D3D;
+      --color-medium-gray: #5A5A5A;
+      --color-bg-light-primary: #D8DDE2;
+      --color-bg-light-secondary: #E8EAED;
+      --color-bg-white: #FFFFFF;
+      --color-text-primary-light: #3D3D3D;
+      --color-text-secondary-light: #6B6B6B;
+      --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --spacing-2xl: 80px;
+      --radius-large: 28px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-bg-light-primary);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: linear-gradient(135deg, #D8DDE2 0%, #E8EAED 100%);
+      overflow: hidden;
+    }
+
+    /* Subtle dot pattern background */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(61, 61, 61, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(167, 212, 240, 0.35) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .metadata {
+      position: absolute;
+      top: 40px;
+      right: 80px;
+      text-align: right;
+      font-size: 11px;
+      color: var(--color-text-secondary-light);
+      line-height: 1.6;
+    }
+
+    .hero-title {
+      position: absolute;
+      bottom: 280px;
+      left: 80px;
+      font-size: 130px;
+      font-weight: 800;
+      color: var(--color-dark-charcoal);
+      letter-spacing: -2.5px;
+      line-height: 1.0;
+      max-width: 1400px;
+    }
+
+    .hero-subtitle {
+      position: absolute;
+      bottom: 200px;
+      left: 80px;
+      font-size: 32px;
+      color: var(--color-medium-gray);
+      line-height: 1.4;
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay"></div>
+
+    <div class="metadata">
+      Presented by:<br>
+      Church Leadership
+    </div>
+
+    <h1 class="hero-title">The Second<br>Coming of Jesus</h1>
+    <p class="hero-subtitle">Hope, Promise, and Eternal Glory</p>
+  </div>
+</body>
+</html>

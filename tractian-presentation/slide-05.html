@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, initial-scale=1.0">
+  <title>TRACTIAN Slide 5</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #000000;
+      color: #FFFFFF;
+      width: 1920px;
+      height: 1080px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .slide {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 120px;
+      position: relative;
+    }
+
+    .slide-footer {
+      position: absolute;
+      bottom: 40px;
+      left: 120px;
+      right: 120px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 14px;
+      color: #7F7F7F;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      color: #7F7F7F;
+      line-height: 1.5;
+      max-width: 800px;
+    }
+
+    .content-list {
+      list-style: none;
+      font-size: 22px;
+      line-height: 1.8;
+    }
+
+    .content-list li {
+      margin-bottom: 16px;
+      padding-left: 40px;
+      position: relative;
+    }
+
+    .content-list li:before {
+      content: "■";
+      position: absolute;
+      left: 0;
+      color: #FFFFFF;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 40px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .metric-card {
+      background: #1F1F1F;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 56px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .metric-label {
+      font-size: 16px;
+      font-family: "SF Mono", Monaco, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #7F7F7F;
+    }
+
+    .swot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .swot-card {
+      background: #1F1F1F;
+      padding: 32px;
+      border-radius: 12px;
+    }
+
+    .swot-card h4 {
+      font-size: 20px;
+      font-family: "SF Mono", Monaco, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+
+    .swot-card ul {
+      list-style: none;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .swot-card li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .swot-card li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+    }
+
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+    }
+
+    .rating-badge {
+      display: inline-block;
+      background: #000000;
+      color: #FFFFFF;
+      padding: 16px 48px;
+      font-size: 36px;
+      font-weight: 500;
+      font-family: "SF Mono", Monaco, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 40px 0;
+    }
+
+    .competitors-list {
+      margin-top: 40px;
+    }
+
+    .competitor-item {
+      background: #1F1F1F;
+      padding: 24px 32px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .competitor-name {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .competitor-weakness {
+      font-size: 16px;
+      color: #7F7F7F;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    
+      <h2>Key Metrics</h2>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">118%</div>
+          <div class="metric-label">Net Revenue Retention</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">1.5%</div>
+          <div class="metric-label">Monthly Churn</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">6-12x</div>
+          <div class="metric-label">Customer ROI</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">446</div>
+          <div class="metric-label">Employees</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">$196M</div>
+          <div class="metric-label">Total Funding</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">$720M</div>
+          <div class="metric-label">Valuation</div>
+        </div>
+      </div>
+    
+  </div>
+  <div class="slide-footer">
+    <span>TRACTIAN Competitive Intelligence</span>
+    <span>5 / 14</span>
+  </div>
+</body>
+</html>

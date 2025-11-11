@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rapture</title>
+  <style>
+    :root {
+      --color-accent-blue: #A7D4F0;
+      --color-accent-blue-rgb: 167, 212, 240;
+      --color-dark-charcoal: #3D3D3D;
+      --color-medium-gray: #5A5A5A;
+      --color-bg-light-primary: #D8DDE2;
+      --color-bg-light-secondary: #E8EAED;
+      --color-bg-white: #FFFFFF;
+      --color-text-primary-light: #3D3D3D;
+      --color-text-secondary-light: #6B6B6B;
+      --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --spacing-2xl: 80px;
+      --radius-large: 28px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-bg-light-primary);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 80px;
+      background: linear-gradient(135deg, #D8DDE2 0%, #E8EAED 100%);
+      overflow: hidden;
+    }
+
+    /* Subtle dot pattern background */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(61, 61, 61, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      bottom: -200px;
+      right: -200px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(167, 212, 240, 0.3) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 48px;
+    }
+
+    .title {
+      font-size: 78px;
+      font-weight: 700;
+      color: var(--color-dark-charcoal);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .content-card {
+      background: var(--color-bg-white);
+      border: 2px solid var(--color-bg-light-primary);
+      border-radius: var(--radius-large);
+      padding: 64px 80px;
+      max-width: 1200px;
+    }
+
+    .description {
+      font-size: 32px;
+      color: var(--color-dark-charcoal);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .highlight {
+      color: var(--color-accent-blue);
+      font-weight: 700;
+      background: linear-gradient(120deg, rgba(167, 212, 240, 0.2) 0%, rgba(167, 212, 240, 0.1) 100%);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay"></div>
+
+    <div class="content-wrapper">
+      <h1 class="title">The Rapture</h1>
+
+      <div class="content-card">
+        <p class="description">
+          The <span class="highlight">blessed hope</span> of believers being caught up to meet the Lord in the air
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

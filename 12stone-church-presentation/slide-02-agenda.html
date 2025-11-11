@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's Agenda - 12Stone Church</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #D8DDE2;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 80px;
+      display: flex;
+      gap: 80px;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: -300px;
+      left: -300px;
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(167, 212, 240, 0.25) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #3D3D3D;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A7D4F0;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      color: #3D3D3D;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .left-column {
+      flex: 0 0 40%;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .title {
+      font-size: 78px;
+      font-weight: 700;
+      color: #3D3D3D;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .divider {
+      width: 2px;
+      height: 600px;
+      background: #D8DDE2;
+      align-self: center;
+      z-index: 1;
+    }
+
+    .right-column {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .agenda-list {
+      list-style: none;
+      width: 100%;
+    }
+
+    .agenda-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      font-size: 16px;
+      color: #3D3D3D;
+    }
+
+    .agenda-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #3D3D3D;
+      border-radius: 50%;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .slide-number {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-size: 14px;
+      color: #6B6B6B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay"></div>
+
+    <div class="logo-container">
+      <div class="logo-icon">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <div class="left-column">
+      <h1 class="title">Today's<br>Agenda</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="right-column">
+      <ul class="agenda-list">
+        <li class="agenda-item">
+          <span class="agenda-number">01</span>
+          <span>Mission & Vision</span>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-number">02</span>
+          <span>Historic Impact</span>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-number">03</span>
+          <span>Core Ministries</span>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-number">04</span>
+          <span>Community Impact</span>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-number">05</span>
+          <span>Growth & Expansion</span>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-number">06</span>
+          <span>Next Steps</span>
+        </li>
+      </ul>
+    </div>
+    <div class="slide-number">2/8</div>
+  </div>
+</body>
+</html>

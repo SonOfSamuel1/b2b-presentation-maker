@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth & Expansion - 12Stone Church</title>
+  <style>
+    :root {
+      --color-black: #000000;
+      --color-white: #FFFFFF;
+      --color-light-gray: #F5F5F5;
+      --color-medium-gray: #7F7F7F;
+      --color-border-subtle: rgba(0, 0, 0, 0.08);
+
+      --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Monaco, Inconsolata, "Fira Mono", monospace;
+
+      --font-size-h1: clamp(2rem, 1.5435rem + 2.087vw, 3.5rem);
+      --font-size-label: 0.75rem;
+
+      --spacing-base: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+
+      --radius-lg: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-white);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: var(--color-white);
+      padding: 80px;
+    }
+
+    /* Logo */
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--color-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-size: 16px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+
+    .logo-text {
+      color: var(--color-black);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Content */
+    .title {
+      font-size: var(--font-size-h1);
+      font-weight: 500;
+      color: var(--color-black);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-3xl);
+    }
+
+    .growth-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+    }
+
+    /* Left Section - Metrics */
+    .growth-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xl);
+    }
+
+    .metric-card {
+      background: var(--color-light-gray);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-lg);
+      transition: border-color 75ms ease-out, box-shadow 75ms ease-out;
+    }
+
+    .metric-card:hover {
+      border-color: var(--color-black);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .metric-number {
+      font-family: var(--font-mono);
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--color-black);
+      min-width: 120px;
+    }
+
+    .metric-content h3 {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-black);
+      margin-bottom: 8px;
+    }
+
+    .metric-content p {
+      font-size: 14px;
+      color: var(--color-medium-gray);
+      line-height: 1.5;
+    }
+
+    /* Right Section - Vision Cards */
+    .expansion-cards {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xl);
+    }
+
+    .expansion-card {
+      background: var(--color-light-gray);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-2xl);
+    }
+
+    .expansion-card.highlight {
+      background: var(--color-black);
+      border-color: var(--color-black);
+    }
+
+    .expansion-label {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-label);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-medium-gray);
+      margin-bottom: var(--spacing-base);
+      display: block;
+    }
+
+    .expansion-card.highlight .expansion-label {
+      color: var(--color-light-gray);
+    }
+
+    .expansion-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--color-black);
+      margin-bottom: var(--spacing-base);
+      line-height: 1.2;
+    }
+
+    .expansion-card.highlight .expansion-title {
+      color: var(--color-white);
+    }
+
+    .expansion-description {
+      font-size: 14px;
+      color: var(--color-medium-gray);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .expansion-card.highlight .expansion-description {
+      color: var(--color-light-gray);
+    }
+
+    .expansion-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .expansion-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--color-black);
+    }
+
+    .expansion-card.highlight .expansion-list li {
+      color: var(--color-white);
+    }
+
+    .expansion-list li::before {
+      content: "✓";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: var(--color-black);
+      color: var(--color-white);
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .expansion-card.highlight .expansion-list li::before {
+      background: var(--color-white);
+      color: var(--color-black);
+    }
+
+    /* Decorative Flow Diagram */
+    .flow-diagram {
+      position: absolute;
+      top: 120px;
+      right: 80px;
+      width: 300px;
+      height: 300px;
+      opacity: 0.08;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <!-- Decorative Flow Diagram -->
+    <svg class="flow-diagram" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Flow boxes -->
+      <rect x="100" y="20" width="100" height="40" rx="6" stroke="#000000" stroke-width="2"/>
+      <text x="150" y="45" font-family="monospace" font-size="10" text-anchor="middle" fill="#000000">Growth</text>
+
+      <rect x="50" y="100" width="80" height="40" rx="6" stroke="#000000" stroke-width="2"/>
+      <text x="90" y="125" font-family="monospace" font-size="10" text-anchor="middle" fill="#000000">Campus</text>
+
+      <rect x="170" y="100" width="80" height="40" rx="6" stroke="#000000" stroke-width="2"/>
+      <text x="210" y="125" font-family="monospace" font-size="10" text-anchor="middle" fill="#000000">Reach</text>
+
+      <circle cx="150" cy="200" r="30" stroke="#000000" stroke-width="2"/>
+      <text x="150" y="205" font-family="monospace" font-size="10" text-anchor="middle" fill="#000000">Impact</text>
+
+      <!-- Connection lines -->
+      <line x1="150" y1="60" x2="90" y2="100" stroke="#000000" stroke-width="2"/>
+      <line x1="150" y1="60" x2="210" y2="100" stroke="#000000" stroke-width="2"/>
+      <line x1="90" y1="140" x2="130" y2="180" stroke="#000000" stroke-width="2"/>
+      <line x1="210" y1="140" x2="170" y2="180" stroke="#000000" stroke-width="2"/>
+
+      <!-- Arrows -->
+      <path d="M130 180 L125 185 L135 185 Z" fill="#000000"/>
+      <path d="M170 180 L165 185 L175 185 Z" fill="#000000"/>
+    </svg>
+    <!-- Logo -->
+    <div class="logo-container">
+      <div class="logo-mark">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <!-- Content -->
+    <h1 class="title">Growth & Expansion</h1>
+
+    <div class="growth-container">
+      <!-- Left Section: Metrics -->
+      <div class="growth-metrics">
+        <div class="metric-card">
+          <div class="metric-number">9 → 12</div>
+          <div class="metric-content">
+            <h3>Campus Expansion</h3>
+            <p>Across Gwinnett and Hall Counties in Georgia</p>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">+5</div>
+          <div class="metric-content">
+            <h3>New Churches</h3>
+            <p>Through Church Planting Network initiative</p>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">12Stone</div>
+          <div class="metric-content">
+            <h3>Home Network</h3>
+            <p>Bringing community to neighborhoods</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section: Vision Cards -->
+      <div class="expansion-cards">
+        <div class="expansion-card highlight">
+          <span class="expansion-label">Vision 2025+</span>
+          <h2 class="expansion-title">Strategic Expansion Plan</h2>
+          <p class="expansion-description">
+            Bringing biblically-rooted, gospel-focused hope to cities that need the rescuing hand of God
+          </p>
+          <ul class="expansion-list">
+            <li>Launch 3 new physical campuses in underserved communities</li>
+            <li>Plant 5 new churches through strategic partnerships</li>
+            <li>Expand 12Stone Home network to 50+ locations</li>
+            <li>Reach 15,000+ weekly attendance across all locations</li>
+          </ul>
+        </div>
+
+        <div class="expansion-card">
+          <span class="expansion-label">Current Campuses</span>
+          <h2 class="expansion-title">9 Campus Locations</h2>
+          <p class="expansion-description">
+            Serving communities across Gwinnett County and Hall County, Georgia, with plans for continued growth and impact
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Millennial Kingdom</title>
+  <style>
+    :root {
+      --color-accent-blue: #A7D4F0;
+      --color-accent-blue-rgb: 167, 212, 240;
+      --color-dark-charcoal: #3D3D3D;
+      --color-medium-gray: #5A5A5A;
+      --color-bg-dark-primary: #4A4A4A;
+      --color-bg-dark-secondary: #525456;
+      --color-bg-white: #FFFFFF;
+      --color-text-primary-dark: #FFFFFF;
+      --color-text-secondary-dark: #E8EAED;
+      --font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --spacing-2xl: 80px;
+      --radius-large: 28px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: var(--color-bg-dark-primary);
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 80px;
+      background: linear-gradient(135deg, #4A4A4A 0%, #525456 100%);
+      overflow: hidden;
+    }
+
+    /* Subtle dot pattern background */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(130, 160, 180, 0.15) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 48px;
+    }
+
+    .title {
+      font-size: 78px;
+      font-weight: 700;
+      color: var(--color-text-primary-dark);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .content-card {
+      background: rgba(90, 90, 90, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-large);
+      padding: 64px 80px;
+      max-width: 1200px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .description {
+      font-size: 32px;
+      color: var(--color-text-primary-dark);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .highlight {
+      color: var(--color-accent-blue);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay"></div>
+
+    <div class="content-wrapper">
+      <h1 class="title">The Millennial Kingdom</h1>
+
+      <div class="content-card">
+        <p class="description">
+          Jesus will reign on Earth for <span class="highlight">1,000 years</span> of peace and righteousness
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

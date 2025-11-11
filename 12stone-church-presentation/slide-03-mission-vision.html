@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission & Vision - 12Stone Church</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #4A4A4A;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 80px;
+      background: linear-gradient(135deg, #4A4A4A 0%, #525456 100%);
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(130, 160, 180, 0.15) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3D3D3D;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .content-container {
+      position: relative;
+      z-index: 1;
+      margin-top: 100px;
+    }
+
+    .title {
+      font-size: 52px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 64px;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 1600px;
+    }
+
+    .mission-card {
+      background: rgba(90, 90, 90, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 36px;
+      padding: 56px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .card-indicator {
+      width: 12px;
+      height: 12px;
+      background: #A7D4F0;
+      border-radius: 50%;
+    }
+
+    .card-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #A7D4F0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-title {
+      font-size: 42px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .card-description {
+      font-size: 18px;
+      color: #E8EAED;
+      line-height: 1.6;
+      max-width: 1200px;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .vision-item {
+      background: rgba(167, 212, 240, 0.1);
+      border: 2px solid rgba(167, 212, 240, 0.3);
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .vision-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      color: #A7D4F0;
+    }
+
+    .vision-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .vision-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .vision-description {
+      font-size: 15px;
+      color: #E8EAED;
+      line-height: 1.5;
+    }
+
+    .hero-image {
+      position: absolute;
+      top: 140px;
+      right: 80px;
+      width: 520px;
+      height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 3px solid rgba(167, 212, 240, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(90, 90, 90, 0.4) 0%, rgba(70, 70, 70, 0.6) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #E8EAED;
+    }
+
+    .placeholder-icon {
+      font-size: 64px;
+      margin-bottom: 12px;
+      opacity: 0.4;
+    }
+
+    .placeholder-text {
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.6;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .slide-number {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-size: 14px;
+      color: #E8EAED;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay"></div>
+
+    <div class="logo-container">
+      <div class="logo-icon">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <div class="content-container">
+      <h1 class="title">Mission & Vision</h1>
+
+      <div class="cards-container">
+        <div class="mission-card">
+          <div class="card-header">
+            <div class="card-indicator"></div>
+            <span class="card-label">Our Mission</span>
+          </div>
+          <h2 class="card-title">So Future Generations Will Know the Rescuing Hand of God</h2>
+          <p class="card-description">
+            Just as the children of Israel stacked twelve stones as a memorial to God's faithfulness in bringing them across the Jordan River into the Promised Land, 12Stone Church exists to be a living memorial of God's rescuing power—so that every generation after us will know His hand at work in their lives.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <div class="card-header">
+            <div class="card-indicator"></div>
+            <span class="card-label">Our Vision</span>
+          </div>
+          <div class="vision-grid">
+            <div class="vision-item">
+              <div class="vision-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 8L28 20L24 32L28 44L32 56L36 44L40 32L36 20L32 8Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M24 32C20 28 16 24 16 20C16 16 18 12 22 12C26 12 28 16 28 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M40 32C44 28 48 24 48 20C48 16 46 12 42 12C38 12 36 16 36 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="32" cy="20" r="3" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3 class="vision-title">Reach the Lost</h3>
+              <p class="vision-description">Bringing hope and the gospel to those who don't yet know Jesus</p>
+            </div>
+            <div class="vision-item">
+              <div class="vision-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 52L12 32C8 28 6 22 8 16C10 10 16 8 20 10C24 12 26 16 28 20L32 28L36 20C38 16 40 12 44 10C48 8 54 10 56 16C58 22 56 28 52 32L32 52Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M32 28L28 20C26 16 24 14 22 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M32 28L36 20C38 16 40 14 42 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="vision-title">Serve the Least</h3>
+              <p class="vision-description">Making a tangible difference in our communities and around the world</p>
+            </div>
+            <div class="vision-item">
+              <div class="vision-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 8L36 24L52 28L36 32L32 48L28 32L12 28L28 24L32 8Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="32" cy="28" r="8" stroke="currentColor" stroke-width="2.5"/>
+                  <path d="M32 4V12M32 44V52M8 28H16M48 28H56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="vision-title">Raise Up Leaders</h3>
+              <p class="vision-description">Developing the next generation of ministry and community leaders</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <!-- Replace src with worship service or community photo -->
+      <!-- <img src="images/worship-service.jpg" alt="12Stone Worship"> -->
+      <div class="image-placeholder">
+        <div class="placeholder-icon">🙏</div>
+        <div class="placeholder-text">Worship Service / Community Photo</div>
+      </div>
+    </div>
+
+    <div class="slide-number">3/8</div>
+  </div>
+</body>
+</html>

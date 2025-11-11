@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - 12Stone Church</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #4A4A4A;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: linear-gradient(135deg, #4A4A4A 0%, #525456 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gradient-overlay-1 {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(130, 160, 180, 0.2) 0%, transparent 70%);
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    .gradient-overlay-2 {
+      position: absolute;
+      bottom: -300px;
+      left: -300px;
+      width: 1200px;
+      height: 1200px;
+      background: radial-gradient(circle, rgba(167, 212, 240, 0.15) 0%, transparent 70%);
+      filter: blur(150px);
+      pointer-events: none;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3D3D3D;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .metadata {
+      position: absolute;
+      top: 40px;
+      right: 80px;
+      text-align: right;
+      font-size: 11px;
+      color: #E8EAED;
+      line-height: 1.6;
+    }
+
+    .content-center {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 1200px;
+      padding: 0 80px;
+    }
+
+    .thank-you-title {
+      font-size: 130px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -2.5px;
+      line-height: 1.0;
+      margin-bottom: 40px;
+    }
+
+    .subtitle {
+      font-size: 28px;
+      color: #E8EAED;
+      line-height: 1.4;
+      margin-bottom: 64px;
+      font-weight: 400;
+    }
+
+    .cta-container {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cta-button {
+      background: #A7D4F0;
+      border: none;
+      border-radius: 16px;
+      padding: 24px 40px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #3D3D3D;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      min-width: 420px;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(167, 212, 240, 0.3);
+    }
+
+    .cta-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cta-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .qr-section {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid rgba(167, 212, 240, 0.3);
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 16px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 16px;
+      color: #3D3D3D;
+    }
+
+    .qr-code svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .qr-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #3D3D3D;
+      margin-bottom: 8px;
+    }
+
+    .qr-url {
+      font-size: 14px;
+      color: #6B6B6B;
+      font-family: 'Monaco', 'Courier New', monospace;
+    }
+
+    .contact-info {
+      background: rgba(90, 90, 90, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 32px 40px;
+      display: inline-flex;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      color: #E8EAED;
+    }
+
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: rgba(167, 212, 240, 0.2);
+      border: 2px solid #A7D4F0;
+      border-radius: 50%;
+      color: #A7D4F0;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .tagline {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: #A7D4F0;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .slide-number {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-size: 14px;
+      color: #E8EAED;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="gradient-overlay-1"></div>
+    <div class="gradient-overlay-2"></div>
+
+    <div class="logo-container">
+      <div class="logo-icon">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <div class="metadata">
+      Presented by:<br>
+      12Stone Church Leadership
+    </div>
+
+    <div class="content-center">
+      <h1 class="thank-you-title">Thank You.</h1>
+      <p class="subtitle">Join us in reaching future generations with the rescuing hand of God</p>
+
+      <div class="cta-container">
+        <div class="cta-buttons">
+          <div class="cta-button">
+            <div class="cta-title">Visit Us This Sunday</div>
+            <div class="cta-subtitle">Experience worship at any of our 9 campus locations</div>
+          </div>
+          <div class="cta-button">
+            <div class="cta-title">Join Growth Track</div>
+            <div class="cta-subtitle">Discover your purpose and make an impact in 3 weeks</div>
+          </div>
+          <div class="cta-button">
+            <div class="cta-title">Partner With Our Mission</div>
+            <div class="cta-subtitle">Help us reach future generations with God's love</div>
+          </div>
+        </div>
+
+        <div class="qr-section">
+          <div class="qr-code">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="36" y="8" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="8" y="36" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="14" y="14" width="8" height="8" fill="currentColor"/>
+              <rect x="42" y="14" width="8" height="8" fill="currentColor"/>
+              <rect x="14" y="42" width="8" height="8" fill="currentColor"/>
+              <path d="M36 36H40M44 36H48M52 36H56M36 40H40M44 40H48M52 40H56M36 44H40M44 44H48M52 44H56M36 48H40M44 48H48M52 48H56M36 52H40M44 52H48M52 52H56" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="qr-label">Visit Our Website</div>
+          <div class="qr-url">12stone.com</div>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M32 8C24 8 18 18 18 32C18 46 24 56 32 56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M32 8C40 8 46 18 46 32C46 46 40 56 32 56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M8 32H56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>12stone.com</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="28" r="8" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 52C16 40 22 32 32 32C42 32 48 40 48 52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M20 16L28 24L44 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>Gwinnett & Hall County, GA</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 56V28L32 16L44 28V56H20Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 56V40H36V56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M32 4V12M28 8H36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>9 Campus Locations</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="20" r="8" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 52C16 40 22 32 32 32C42 32 48 40 48 52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="16" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+              <circle cx="48" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <span>10,000+ Weekly Attendance</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="tagline">"So future generations will know the rescuing hand of God"</p>
+    <div class="slide-number">8/8</div>
+  </div>
+</body>
+</html>

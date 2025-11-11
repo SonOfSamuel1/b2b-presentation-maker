@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Ministries - 12Stone Church</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #D8DDE2;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 80px;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: #3D3D3D;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A7D4F0;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      color: #3D3D3D;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .title {
+      font-size: 52px;
+      font-weight: 700;
+      color: #3D3D3D;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 64px;
+      max-width: 800px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 1600px;
+    }
+
+    .ministry-card {
+      background: #FFFFFF;
+      border: 2px solid #D8DDE2;
+      border-radius: 28px;
+      padding: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .card-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: #A7D4F0;
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: 700;
+      color: #3D3D3D;
+      flex-shrink: 0;
+    }
+
+    .card-content h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3D3D3D;
+      margin-bottom: 12px;
+    }
+
+    .card-content p {
+      font-size: 15px;
+      color: #6B6B6B;
+      line-height: 1.6;
+    }
+
+    .card-highlight {
+      background: #A7D4F0;
+      border-color: #A7D4F0;
+    }
+
+    .card-highlight h3 {
+      color: #3D3D3D;
+    }
+
+    .card-highlight p {
+      color: #3D3D3D;
+    }
+
+    .ministry-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .ministry-image {
+      width: 100%;
+      height: 240px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid #D8DDE2;
+    }
+
+    .ministry-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #E8EAED 0%, #D8DDE2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #6B6B6B;
+    }
+
+    .placeholder-icon {
+      font-size: 56px;
+      margin-bottom: 12px;
+      opacity: 0.3;
+    }
+
+    .placeholder-text {
+      font-size: 13px;
+      font-weight: 600;
+      opacity: 0.5;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .slide-number {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-size: 14px;
+      color: #6B6B6B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="logo-container">
+      <div class="logo-icon">12</div>
+      <span class="logo-text">12Stone Church</span>
+    </div>
+
+    <h1 class="title">Core Ministries</h1>
+
+    <div class="cards-grid">
+      <div class="ministry-card card-highlight">
+        <div class="card-number">01</div>
+        <div class="card-content">
+          <h3>Unshakeable Initiative</h3>
+          <p>A comprehensive two-year discipleship journey built on 12 key elements across three strategic lanes: Unshakeable Lives, Unshakeable Communities, and Unshakeable Impact. This initiative transforms individuals into fully devoted followers of Christ.</p>
+        </div>
+      </div>
+
+      <div class="ministry-card">
+        <div class="card-number">02</div>
+        <div class="card-content">
+          <h3>Buddies Special Needs Ministry</h3>
+          <p>Expanding across all campuses to equip volunteers and serve kids and adults with special needs. Partnering with the Tim Tebow Foundation to host Night to Shine in 2026, celebrating individuals with special needs.</p>
+        </div>
+      </div>
+
+      <div class="ministry-card">
+        <div class="card-number">03</div>
+        <div class="card-content">
+          <h3>Family Discipleship</h3>
+          <p>Launching targeted Discipleship Retreats like "Dad Camp" to strengthen marriages and families. Introducing Kids Summer Camp as a catalyst to reach and disciple Gen Alpha children in their formative years.</p>
+        </div>
+      </div>
+
+      <div class="ministry-card">
+        <div class="card-number">04</div>
+        <div class="card-content">
+          <h3>Growth Track</h3>
+          <p>A three-week journey meeting weekly at each campus where participants discover 12Stone's story, explore their unique spiritual gifts and personality, and learn how to make an impact through meaningful involvement.</p>
+        </div>
+      </div>
+
+      <div class="ministry-card">
+        <div class="card-number">05</div>
+        <div class="card-content">
+          <h3>John C. Maxwell Leadership Center</h3>
+          <p>Inspiring and developing next generation ministry leaders through world-class leadership training and development programs, equipping leaders to multiply their impact in the church and community.</p>
+        </div>
+      </div>
+
+      <div class="ministry-card">
+        <div class="card-number">06</div>
+        <div class="card-content">
+          <h3>Daymaker Ministry</h3>
+          <p>Empowering individuals to make someone's day by showing God's love through intentional acts of kindness, service, and encouragement in everyday life—transforming ordinary moments into eternal impact.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ministry-images">
+      <div class="ministry-image">
+        <!-- <img src="images/ministry-discipleship.jpg" alt="Discipleship"> -->
+        <div class="image-placeholder">
+          <div class="placeholder-icon">📖</div>
+          <div class="placeholder-text">Discipleship Ministry</div>
+        </div>
+      </div>
+      <div class="ministry-image">
+        <!-- <img src="images/ministry-kids.jpg" alt="Kids Ministry"> -->
+        <div class="image-placeholder">
+          <div class="placeholder-icon">👨‍👩‍👧‍👦</div>
+          <div class="placeholder-text">Kids & Family Ministry</div>
+        </div>
+      </div>
+      <div class="ministry-image">
+        <!-- <img src="images/ministry-leadership.jpg" alt="Leadership"> -->
+        <div class="image-placeholder">
+          <div class="placeholder-icon">🎯</div>
+          <div class="placeholder-text">Leadership Development</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-number">5/8</div>
+  </div>
+</body>
+</html>
